@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:gravity="center"
+    android:background="#ffffff">
+
+    <TextView
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/game_tip"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/rock"
+            android:src="@mipmap/rock"
+            android:layout_marginRight="20dp"
+            />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/paper"
+            android:src="@mipmap/paper"
+            />
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/scissors"
+            android:src="@mipmap/scissors"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/game_result_record"/>
+
+</LinearLayout>
