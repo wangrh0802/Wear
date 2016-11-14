@@ -91,6 +91,7 @@ public class WearMainPage extends Activity implements GoogleApiClient.Connection
                 paper.setOnClickListener(WearMainPage.this);
                 scissors = (ImageView) stub.findViewById(R.id.scissors);
                 scissors.setOnClickListener(WearMainPage.this);
+                resetImage();
                 gameStatus = WAITING;
                 changeTip();
             }
@@ -127,12 +128,15 @@ public class WearMainPage extends Activity implements GoogleApiClient.Connection
 
         switch (v.getId()){
             case R.id.rock:
+                rock.setAlpha(1.0f);
                 sendToPhone(Util.ROCK);
                 break;
             case R.id.paper:
+                paper.setAlpha(1.0f);
                 sendToPhone(Util.PAPER);
                 break;
             case R.id.scissors:
+                scissors.setAlpha(1.0f);
                 sendToPhone(Util.SCISSORS);
                 break;
             case R.id.game_result_back:
@@ -210,8 +214,16 @@ public class WearMainPage extends Activity implements GoogleApiClient.Connection
 
     private void resetGame(){
         phoneChoice = "";
+        wearChoice = "";
+        resetImage();
         gameStatus = PREPARED;
         changeTip();
+    }
+
+    private void resetImage(){
+        rock.setAlpha(0.3f);
+        paper.setAlpha(0.3f);
+        scissors.setAlpha(0.3f);
     }
 
     @Override

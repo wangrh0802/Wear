@@ -92,6 +92,7 @@ public class PhoneMainPage extends Activity implements GoogleApiClient.Connectio
         gameTip = (TextView)findViewById(R.id.game_tip);
         gameResultRecord = (TextView)findViewById(R.id.game_result_record);
         gameStatus = WAITING;
+        resetImage();
 
         View view = LayoutInflater.from(this).inflate(R.layout.result_dialog, null);
         dialogResult = (TextView)view.findViewById(R.id.game_result_text);
@@ -109,8 +110,16 @@ public class PhoneMainPage extends Activity implements GoogleApiClient.Connectio
 
     private void resetGame(){
         wearChoice = "";
+        phoneChoice = "";
+        resetImage();
         gameStatus = PREPARED;
         changeTip();
+    }
+
+    private void resetImage(){
+        rock.setAlpha(0.3f);
+        paper.setAlpha(0.3f);
+        scissors.setAlpha(0.3f);
     }
 
     private void loadRecord(){
@@ -163,12 +172,15 @@ public class PhoneMainPage extends Activity implements GoogleApiClient.Connectio
 
         switch (v.getId()){
             case R.id.rock:
+                rock.setAlpha(1.0f);
                 sendToWear(Util.ROCK);
                 break;
             case R.id.paper:
+                paper.setAlpha(1.0f);
                 sendToWear(Util.PAPER);
                 break;
             case R.id.scissors:
+                scissors.setAlpha(1.0f);
                 sendToWear(Util.SCISSORS);
                 break;
             case R.id.game_result_back:
